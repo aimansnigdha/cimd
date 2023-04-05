@@ -1,0 +1,358 @@
+<script src="http://www.google.com/jsapi" type="text/javascript"></script> 
+<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+
+<style type="text/css">
+	body {
+		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+		font-weight:300;
+		font-size:18px;
+		margin-left: auto;
+		margin-right: auto;
+		width: 1100px;
+	}
+	
+	h1 {
+		font-size:32px;
+		font-weight:300;
+	}
+	
+	.disclaimerbox {
+		background-color: #eee;		
+		border: 1px solid #eeeeee;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+		padding: 20px;
+	}
+
+	video.header-vid {
+		height: 140px;
+		border: 1px solid black;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+	
+	img.header-img {
+		height: 140px;
+		border: 1px solid black;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+	
+	img.rounded {
+		border: 1px solid #eeeeee;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+	
+	a:link,a:visited
+	{
+		color: #1367a7;
+		text-decoration: none;
+	}
+	a:hover {
+		color: #208799;
+	}
+	
+	td.dl-link {
+		height: 160px;
+		text-align: center;
+		font-size: 22px;
+	}
+	
+	.layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+		5px 5px 0 0px #fff, /* The second layer */
+		5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+		10px 10px 0 0px #fff, /* The third layer */
+		10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
+		15px 15px 0 0px #fff, /* The fourth layer */
+		15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
+		20px 20px 0 0px #fff, /* The fifth layer */
+		20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
+		25px 25px 0 0px #fff, /* The fifth layer */
+		25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+		margin-left: 10px;
+		margin-right: 45px;
+	}
+
+	.paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		0px 0px 1px 1px rgba(0,0,0,0.35); /* The top layer shadow */
+
+		margin-left: 10px;
+		margin-right: 45px;
+	}
+
+
+	.layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+		5px 5px 0 0px #fff, /* The second layer */
+		5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+		10px 10px 0 0px #fff, /* The third layer */
+		10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+		margin-top: 5px;
+		margin-left: 10px;
+		margin-right: 30px;
+		margin-bottom: 5px;
+	}
+	
+	.vert-cent {
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	
+	hr
+	{
+		border: 0;
+		height: 1px;
+		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+	}
+</style>
+
+<html>
+<head>
+	<title>Ambiguous Medical Image Segmentation using Diffusion Models</title>
+	<meta property="og:image" content="Path to my teaser.png"/> <!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
+	<meta property="og:title" content="Creative and Descriptive Paper Title." />
+	<meta property="og:description" content="Paper description." />
+
+	<!-- Get from Google Analytics -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src=""></script> 
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-75863369-6');
+	</script>
+</head>
+
+<body>
+	<br>
+	<center>
+		<span style="font-size:36px">Ambiguous Medical Image Segmentation using Diffusion Models</span>
+	
+		<table align=center width=600px>
+			<table align=center width=1000px>
+				<tr>
+					<td align=center width=100px>
+						<center>
+							<span style="font-size:19px"><a href="https://aimansnigdha.github.io/">Aimon Rahman<sup>1</sup></a></span>
+						</center>
+					</td>
+					<td align=center width=100px>
+						<center>
+							<span style="font-size:19px"><a href="https://jeya-maria-jose.github.io/research/">Jeya Maria Jose Valanarasu<sup>1</sup></a></span>
+						</center>
+					</td>
+					<td align=center width=100px>
+						<center>
+							<span style="font-size:19px"><a href="https://scholar.google.co.in/citations?user=dA7G64kAAAAJ&hl=en">Ilker Hacihaliloglu<sup>2</sup></a></span>
+						</center>
+					</td>
+
+
+					<td align=center width=100px>
+						<center>
+							<span style="font-size:19px"><a href="https://scholar.google.com/citations?user=AkEXTbIAAAAJ&hl=en">Vishal M. Patel<sup>1</sup></a></span>
+						</center>
+					</td>
+
+
+
+
+				</tr>
+			</table>
+
+			<br>
+
+			<table align=center width=800px>
+				<tr>
+					<td align=center width=1200px>
+						<center>
+							<span style="font-size:20px"><sup>1</sup>Johns Hopkins University</span>
+						</center>
+					</td>
+					<td align=center width=1200px>
+						<center>
+							<span style="font-size:20px"><sup>2</sup>University of British Columbia</span><br>
+						</center>
+					</td>
+				</tr>
+
+				
+			</table>
+<br>
+
+			<table align=center width=800px>
+				<tr>
+					<td align=center width=1200px>
+						<center>
+							<span style="font-size:25px; color: crimson;">[CVPR 2023]</span>
+						</center>
+				
+				</tr>
+
+				
+			</table>
+
+<br>
+
+			<table align=center width=250px>
+				<tr>
+					<td align=center width=120px>
+						<center>
+							<span style="font-size:24px"><a href=''>[Paper]</a></span>
+						</center>
+					</td>
+					<td align=center width=120px>
+						<center>
+							<span style="font-size:24px"><a href='https://github.com/aimansnigdha/Ambiguous-Medical-Image-Segmentation-using-Diffusion-Models'>[GitHub]</a></span><br>
+						</center>
+					</td>
+				</tr>
+
+				
+			</table>
+		</table>
+	</center>
+
+	<center>
+
+		<table align=center width=850px>
+	
+	<p align="center">
+	<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTdvJO7uyh0027lgWFfcS4F-udfl9YwBuHneghmYduqgLW7sfDl5mmSEyg1SBcG-E6qqVo-cK7ntvFr/embed?start=true&loop=true&delayms=1000" frameborder="0" width="1200" height="350" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+	</p>
+		</table>
+	</center>
+
+	<span style="font-size: 10px; text-align: right;">*These AI radiologists do not exist. Generated by Stable diffusion for visualization purposes.</span>
+
+	
+
+	<hr>
+
+	<table align=center width=850px>
+		<center><h1>Abstract</h1></center>
+		<tr>
+			<td>
+				Collective insights from a group of experts have always proven to outperform an individual's best diagnostic for clinical tasks. For the task of medical image segmentation, existing research on AI-based alternatives focuses more on developing models that can imitate the best individual rather than harnessing the power of expert groups. In this paper, we introduce a single diffusion model-based approach that produces multiple plausible outputs by learning a distribution over group insights. 
+Our proposed model generates a distribution of segmentation masks by leveraging the inherent stochastic sampling process of diffusion using only minimal additional learning. We demonstrate on three different medical image modalities- CT, ultrasound, and MRI that our model is capable of producing several possible variants while capturing the frequencies of their occurrences. 
+Comprehensive results show that our proposed approach outperforms existing state-of-the-art ambiguous segmentation networks in terms of accuracy while preserving naturally occurring variation. We also propose a new metric to evaluate the diversity as well as the accuracy of segmentation predictions that aligns with the interest of clinical practice of collective insights.
+			</td>
+
+			
+		</tr>
+	
+		
+	</table>
+<br>
+<br>
+	<table align=center width=400px>
+		<tr>
+			<td align=center width=400px>
+				<center>
+					<td><figure><img class="round" style="width:600px" src="./resources/INTRO-FIGS.jpg"/> <figcaption> <small> <br>a) Deterministic networks produce a single output for an input image. b) c-VAE-based methods encode prior information about the input image in a separate network and sample latent variables from there and inject it into the deterministic segmentation network to produce stochastic segmentation masks. c)  In our method the diffusion model learns the latent structure of the segmentation as well as the ambiguity of the dataset by modeling the way input images are diffused through the latent space. Hence our  method does not need an additional prior encoder to provide latent variables for multiple plausible annotations.</small></figcaption></figure> </td>
+				</center>
+			</td>
+		</tr>
+
+	</table>
+	<br>
+	<hr>
+	<center><h1>Code</h1></center>
+
+	<table align=center width=420px>
+		<center>
+			<tr>
+				<td>
+				</td>
+			</tr>
+		</center>
+		
+	</table>
+	<table align=center width=400px>
+		<tr>
+			<td align=center width=400px>
+				<center>
+					<td><img class="round" style="width:700px" src="./resources/FIG_MAIN_2.jpg"/></td>
+				</center>
+			</td>
+		</tr>
+	</table>
+	<table align=center width=850px>
+		<center>
+			<tr>
+				<td>
+					The proposed technique incorporates two components, namely the Axial Aligned Gaussian Encoder-based AMN (Ambiguity Modeling Network) and ACN (Ambiguity Controlling Network), in each stage of the diffusion process. The AMN takes into account both the input image and its corresponding ground truth mask distribution, while the ACN takes in the input image and the predicted distribution at each stage. By minimizing the Kullback-Leibler divergence between these two distributions, the network is trained to generate multiple outputs from a single input. 
+				</td>
+
+			</tr>
+		</center>
+	
+
+	</table>
+	<table align=center width=800px>
+		<br>
+		<tr><center>
+			<span style="font-size:28px">&nbsp;<a href='https://github.com/aimansnigdha/Ambiguous-Medical-Image-Segmentation-using-Diffusion-Models'>[GitHub]</a>
+			</center>
+		</span>
+	</table>
+	<br>
+	<hr>
+	<table align=center width=450px>
+		<center><h1>Paper and Supplementary Material</h1></center>
+		<tr>
+			<td><a href=""><img class="layered-paper-big" style="height:175px" src="./resources/paper.png"/></a></td>
+			<td><span style="font-size:14pt">Aimon Rahman, Jeya Maria Jose Valanarasu, Ilker Hacihaliloglu, Vishal M. Patel<br>
+				<b>Ambiguous Medical Image Segmentation using Diffusion Models.</b><br>
+				CVPR, 2023.<br>
+				(hosted on <a href="">ArXiv</a>)<br>
+				<!-- (<a href="./resources/camera-ready.pdf">camera ready</a>)<br> -->
+				<span style="font-size:4pt"><a href=""><br></a>
+				</span>
+			</td>
+		</tr>
+	</table>
+	<br>
+
+	<table align=center width=600px>
+		<tr>
+			<td><span style="font-size:14pt"><center>
+				<a href="./resources/bibtex.txt">[Bibtex]</a>
+			</center></td>
+		</tr>
+	</table>
+
+	<hr>
+	<br>
+
+
+
+
+	<table align=center width=900px >
+		<center><h2 style="color: rgb(200, 200, 200)">Disclaimer</h2></center>
+		<tr>
+			<td style='text-align: justify;color: rgb(200, 200, 200)'>
+				<p >The content and images provided on this project website are not intended to replace professional medical or health advice. They are offered in good faith for general informational, research, and educational purposes only. The authors do not guarantee the accuracy, validity, reliability, or completeness of any information on the site. Therefore, before making any decisions or taking any actions based on the information provided, we strongly advise you to consult with qualified medical professionals. The use or reliance on any information presented on the site is solely at your own risk.</p>
+			</td>
+		</tr>
+	</table>
+	<hr>
+	<center><span style="font-size: 10px; text-align: center;">This template was originally made by <a href="http://web.mit.edu/phillipi/">Phillip Isola</a> and <a href="http://richzhang.github.io/">Richard Zhang</a> for a <a href="http://richzhang.github.io/colorization/">colorful</a> ECCV project; the code can be found <a href="https://github.com/richzhang/webpage-template">here</a></span></center>
+	<br />
+
+<br>
+</body>
+</html>
+
